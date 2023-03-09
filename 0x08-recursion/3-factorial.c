@@ -15,4 +15,5 @@ int factorial(int n)
 	else if (n < 0) /* 2nd condition */
 		return (-1);
 	else
-		ret
+		return (n * factorial(n - 1)); /* Recursive call */
+}
