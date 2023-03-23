@@ -1,4 +1,3 @@
-README.md
 Task 0: What's my name
 
      A function that prints a name.
