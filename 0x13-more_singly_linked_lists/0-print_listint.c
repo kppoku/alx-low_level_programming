@@ -1,32 +1,20 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
 
 /**
- * main - check the code
+ * print_listint - prints all the elements of the linked  list_int list
+ * @h: head of the list_int list
  *
- * Return: Always 0
+ * Return: number of nodes
  */
-int main(void)
+size_t print_listint(const listint_t *h)
 {
-	listint_t *head;
-	listint_t *new;
-	listint_t hello = {8, NULL};
-	size_t n;
+	unsigned int i = 0;
+	const listint_t	 *new_node = h;
 
-	head = &hello;
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
+	for (; new_node; new_node = new_node->next)
 	{
-		printf("Error\n");
-		return (1);
+		printf("%d\n", new_node->n);
+		i++;
 	}
-	new->n = 9;
-	new->next = head;
-	head = new;
-	n = print_listint(head);
-	printf("-> %lu elements\n", n);
-	free(new);
-	return (0);
+	return (i);
 }
