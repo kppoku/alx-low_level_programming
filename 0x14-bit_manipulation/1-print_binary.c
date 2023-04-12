@@ -8,15 +8,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void print_binary(unsigned long int n) {
-    if (n > 1) {
-        print_binary(n >> 1);
+void print_binary(int num) {
+    int* binary = malloc(sizeof(int) * 32);
+    int i = 0;
+
+    // Convert decimal to binary
+    while (num > 0) {
+        binary[i] = num % 2;
+        num /= 2;
+        i++;
     }
-    _putchar((n & 1) ? '1' : '0');
+
+    // Print binary representation
+    for (int j = i - 1; j >= 0; j--) {
+        _putchar(binary[j] + '0');
+    }
+
+    // Free dynamically allocated memory
+    free(binary);
 }
 
 int main() {
-    unsigned long int num = 10;
+    int num = 10;
     print_binary(num);
     return 0;
 }
