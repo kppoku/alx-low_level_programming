@@ -5,16 +5,25 @@
  * @n:decimal digit to convert in binary.
  */
 
-#include <stdio.h>
-
-void print_binary(unsigned long int n) {
+void print_binary(unsigned long int n)
+{
     int i;
-    for (i = sizeof(unsigned long int) * 8 - 1; i >= 0; i--) {
-        if ((n >> i) & 1) {
-            _putchar("1");
-        } else {
-            _putchar("0");
-        }
+    char bits[64];
+
+    for (i = 0; i < 64; i++) {
+        bits[i] = '0';
     }
-    _putchar("\n");
+
+    i = 0;
+    while (n > 0) {
+        if (n & 1) {
+            bits[i] = '1';
+        }
+        n >>= 1;
+        i++;
+    }
+
+    for (i = 63; i >= 0; i--) {
+        _putchar(bits[i]);
+    }
 }
