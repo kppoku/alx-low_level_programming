@@ -6,30 +6,15 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-void print_binary(int num) {
-    int* binary = malloc(sizeof(int) * 32);
-    int i = 0;
-
-    // Convert decimal to binary
-    while (num > 0) {
-        binary[i] = num % 2;
-        num /= 2;
-        i++;
+void print_binary(unsigned long int n) {
+    int i;
+    for (i = sizeof(unsigned long int) * 8 - 1; i >= 0; i--) {
+        if ((n >> i) & 1) {
+            _putchar("1");
+        } else {
+            _putchar("0");
+        }
     }
-
-    // Print binary representation
-    for (int j = i - 1; j >= 0; j--) {
-        _putchar(binary[j] + '0');
-    }
-
-    // Free dynamically allocated memory
-    free(binary);
-}
-
-int main() {
-    int num = 10;
-    print_binary(num);
-    return 0;
+    _putchar("\n");
 }
