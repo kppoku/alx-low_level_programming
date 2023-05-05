@@ -4,7 +4,7 @@
  * clear_bit - Sets the value of a given bit to 0.
  * @n: Pointer to the number to change.
  * @index: index starting from 0 of the bit you want to set.
- * Return: 1 if it worked, or -1 if an error occurred
+ * Return: 1 if it worked and -1 if an error occurred
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
