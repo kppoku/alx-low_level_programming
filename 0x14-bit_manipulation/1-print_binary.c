@@ -1,5 +1,5 @@
-#include "main.h"
 #include <stdio.h>
+#include "mainh"
 
 /**
  * print_binary - print binary representation of a number
