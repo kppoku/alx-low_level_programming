@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * @b: binary string
- * 
  * binary_to_uint - converts binary to int
+ * 
+ * @b: char string
  *
  * Return: unsigned int with decimal value of binary number, or 0 if error
  */
